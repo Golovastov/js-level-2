@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pokemons</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		var xhr = 	new XMLHttpRequest();
+		xhr.open('GET','https://pokeapi.co/api/v2/pokemon/?limit=151','true');
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState === XMLHttpRequest.DONE){
+				if (xhr.status === 200){
+					var pokemons = JSON.parse(xhr.responseText);
+					//for ()
+					console.log(pokemons);
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

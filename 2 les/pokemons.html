@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Pokemons</title>
-</head>
-<body>
-	
 	<script type="text/javascript">
-		var xhr = 	new XMLHttpRequest();
-		xhr.open('GET','https://pokeapi.co/api/v2/pokemon/?limit=151','true');
-		xhr.send();
-		xhr.onreadystatechange = function() {
-			if(xhr.readyState === XMLHttpRequest.DONE){
-				if (xhr.status === 200){
-					var pokemons = JSON.parse(xhr.responseText);
-					
+		window.onload = function() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon/?limit=151', 'true');
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if (xhr.status === 200) {
+						var pokeArr = JSON.parse(xhr.responseText);
+
+						// достаю массив объектов
+						var pokeResults = pokeArr.results;
+						var pokeList = document.getElementById('pokeList');
+
+						for (i = 0; i < pokeResults.length; i++) {
+							var str = 'https://pokeapi.co/api/v2/pokemon/' + (i + 1) + '/';
+							if (pokeResults[i].url === str) {
+
+								// место под свойство name
+								var div = document.createElement('div');
+								div.innerText = pokeResults[i].name;
+								var img = document.createElement('img');
+
+								// по индексу присваиваю спрайты
+								img.src = 'sprites/' + (i + 1) + '.png';
+								img.alt = pokeResults[i].name;
+								div.appendChild(img);
+								pokeList.appendChild(div);
+							}
+						}
+					}
+				}
 			}
 		}
-		
+
 	</script>
+</head>
+
+<body>
+	<div id="pokeList"></div>
 </body>
+
 </html>

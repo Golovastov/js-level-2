@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>HW 3</title>
+	<link rel="stylesheet" href="les_3.css">
+</head>
+
+<body>
+	<div style="margin: 0 auto; width: 500px;">
+		<p style="font-size: 25px;" id="str">Дана строка: 'Helo' 'Hi I'am 'Don't no'</p>
+		<a href="#" style="font-size: 19px" onclick="regExp_1()">
+		Задание 1. Заменить все символы (') на (") с помощью регулярного выражения /'/g
+		</a>
+		<br>
+		<br>
+		<a href="#" style="font-size: 19px" onclick="regExp_2()">
+		Задание 2. Заменить символ (') только в начале и в конце слова с помощью регулярного выражения /\B'|'\B/g
+		</a>
+
+		<br>
+		<br>
+
+		<p><b>Задание 3:</b></p>
+		<form action="#" style="border: 1px solid black; width: 190px; padding: 10px;">
+			<legent>Форма обратной связи</legent>
+			<input style="margin: 5px; padding: 5px;" id="name" type="text" placeholder="ФИО">
+			<input style="margin: 5px; padding: 5px;" id="tel" type="tel" placeholder="+7(000)000-0000">
+			<input style="margin: 5px; padding: 5px;" id="mail" type="mail" placeholder="my-mail@mail.ru">
+			<textarea style="margin: 5px; padding: 5px;" name="" id="" cols="22" rows="10"></textarea>
+			<button style="margin: 5px; padding: 5px;" onclick="validation()">Отправить</button>
+		</form>
+	</div>
+
+	<!------HOME WORK------>
+
+	<script>
+		var str = "'Helo' 'Hi I'am 'Don't no'";
+		var p = document.getElementById("str");
+
+		// Task 1 regExp которое меняет одинарные кавычки на двойные 
+
+		function regExp_1() {
+			var task_1 = str.replace(/'/g, "\"");
+			p.innerText = "Дана строка: " + task_1;
+		}
+
+		// Task 2 regExp которое меняет одинарные кавычки на двойные только в начале сторки и в конце
+
+		function regExp_2() {
+			var task_2 = str.replace(/\B'|'\B/g, "\"");
+			p.innerText = "Дана строка: " + task_2;
+		}
+
+
+		// Task 3
+
+		function validation() {
+			var doc = document,
+				valueName = doc.getElementById('name').value,
+				valueTel = doc.getElementById('tel').value,
+				valueMail = doc.getElementById('mail').value;
+			//RegExp для имени
+			if (/^[a-zа-яё]{2,}$/i.test(valueName) === true) {
+				// для телефона
+				if (/\+?\d{1,3}\(?\s?\d{3}\s?\)?\d{3}-?\s?\d{4}/.test(valueTel) === true) {
+					// для E-mail
+					if (/(^\w+(|(\.|\-)\w+))(?=@[a-z]{2,}\.[a-z]{2,4}\b)/i.test(valueMail) === true) {
+						alert('отправлено');
+					} else
+						var mail = doc.getElementById('mail');
+						mail.className = 'err';
+						mail.oninput = function() {
+							mail.removeAttribute('class');
+					}
+				} else
+					var tel = doc.getElementById('tel');
+					tel.className = 'err';
+					tel.oninput = function() {
+						tel.removeAttribute('class');
+				}
+			} else
+				var name = doc.getElementById('name');
+				name.className = 'err';
+				name.oninput = function() {
+					name.removeAttribute('class');
+				}
+		}
+
+	</script>
+</body>
+
+</html>

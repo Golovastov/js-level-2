@@ -1,9 +1,24 @@
 (function ($) {
   $(function () {
-
+    $('#citieName').on('input', function () {
+      var citieNamePart = $(this).val();
+      if (citieNamePart.length >= 3) {
+        $('#citiesList option').remove();
+        $.post('http://geoapi.spacenear.ru/api.php?method=getCities&limit=10', {patern: citieNamePart}, function (data) {
+          var result = JSON.parse(data);
+          for (var i = 0; i < result.length; i++) {
+            $('<option>', {
+              text: result[i].name
+            }).appendTo('#citiesList');
+          }
+        });
+      }
+    })
   });
 })(jQuery);
 
+
+// Валидация формы
 
 function validation() {
   var doc = document,

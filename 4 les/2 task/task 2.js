@@ -2,7 +2,7 @@
   $(function () {
     $('#citieName').on('input', function () {
       var citieNamePart = $(this).val();
-      if (citieNamePart.length >= 3) {
+      if (citieNamePart.length >= 2) {
         $('#citiesList option').remove();
         $.get('http://geoapi.spacenear.ru/api.php?method=getCities&countryId=1&pattern=' + citieNamePart, function (data) {
           var result = JSON.parse(data);

@@ -78,6 +78,23 @@ form {
 }
 
 .err {
-  border-color: red;
-  color: red;
+  border-color: rgb(243, 78, 78);
+  color: rgb(88, 0, 0);
+}
+
+.fa-times-circle {
+  font-size: 50px;
+  color: rgb(88, 0, 0);
+}
+
+.ui-widget-header {
+  border: none;
+}
+
+.ui-dialog-buttonpane {
+  border: none;    
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+  margin-right: 3.15em;
 }

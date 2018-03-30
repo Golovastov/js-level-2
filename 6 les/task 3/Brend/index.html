@@ -4,13 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Index</title>
-  <link rel="stylesheet" href="style/normalize.css">
-  <link rel="stylesheet" href="style/style_less.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/1044d5a6c1.js"></script>
+  <link rel="stylesheet" href="style/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css"/>
+  <link rel="stylesheet" href="style/style_less.css">
 </head>
 
 <body>
+  <script>
+    $(document).ready(function(){
+      $("#Featured_Items_slider_1").slick ({
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        dots: true
+      });
+      $("#Featured_Items_slider_2").slick ({
+        infinite: true,
+        autoplay: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        dots: true
+      });
+    });
+  </script>
 <header>
   <div class="header">
     <div class="container header_flex">
@@ -146,28 +167,46 @@
   
   <h2 class="h2_Fut_it">Featured Items</h2>
   <i class="f_items_i">Shop for items based on what we featured in this week</i>
-  
   <div class="Featured_Items">
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-2.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
-      <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a>
+    <div id="Featured_Items_slider_1">
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-2.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
+        <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a>
+      </div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-3.png" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
+        <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-4.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-5.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-6.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-7.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-8.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+      <div class="item"><a href="Single_Page.html"><img src="img/layer-9.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+              href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
     </div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-3.png" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
-      <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-4.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-5.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-6.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-7.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-8.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
-    <div class="item"><a href="Single_Page.html"><img src="img/layer-9.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
-            href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+        <div id="Featured_Items_slider_2">
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-2.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
+            <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a>
+          </div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-3.png" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a>
+            <a href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-4.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-5.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-6.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-7.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-8.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+          <div class="item"><a href="Single_Page.html"><img src="img/layer-9.jpg" alt=""><strong>Mango People T-shirt<span>$52.00</span></strong></a><a
+                  href="#" class="add_to_cart"><img src="img/cart_wite.png" alt="cart">Add to Cart</a></div>
+        </div>
   </div>
-  
-  
   <a href="#" class="all_prod">Browse All Product <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
   
   <div class="offer">
@@ -288,5 +327,6 @@
     </div>
   </div>
 </footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
 </body>
 </html>

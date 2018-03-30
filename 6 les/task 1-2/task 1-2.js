@@ -4,9 +4,12 @@ $(document).ready(function () {
   $('#datepicker').datepicker({
     firstDay: 1,
     dateFormat: 'dd.mm.yy',
+    showOtherMonths: true,
+    selectOtherMonths: true,
     changeMonth: true,
     changeYear: true,
-    yearRange: "1940:2015",
+    defaultDate: '-18y',
+    yearRange: '1940:2018',
     dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
     monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
@@ -20,7 +23,7 @@ $(document).ready(function () {
   $(function () {
     $('#citieName').on('input', function () {
       var citieNamePart = $(this).val();
-      if (citieNamePart.length >= 3) {
+      if (citieNamePart.length >= 2) {
         $('#citiesList option').remove();
         $.get('http://geoapi.spacenear.ru/api.php?method=getCities&countryId=1&pattern=' + citieNamePart, function (data) {
           var result = JSON.parse(data);
@@ -35,9 +38,12 @@ $(document).ready(function () {
   });
 })(jQuery);
 
-
 // Валидация формы
-
+/* 
+  "Колхозный" метод валидации получился, с несовсем удачой логикой,
+  1-ая весия была написана на vanilla js,
+  потом дорабатывалась уже с jQuery.
+*/
 function validation() {
 // отмена отправки
 $('#btn1').submit(function(){

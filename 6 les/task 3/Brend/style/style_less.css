@@ -412,10 +412,10 @@ form .button_search:hover {
   margin-top: 16px;
 }
 .Featured_Items {
-  height: 747px;
+/*   height: 747px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   margin-top: 20px;
 }
 .item {
@@ -468,11 +468,11 @@ form .button_search:hover {
   font-weight: 700;
   text-align: center;
   border-radius: 3px;
+  line-height: 0;
 }
 .add_to_cart img {
   position: relative;
   top: 8px;
-  right: 4px;
 }
 .add_to_cart:hover {
   border-color: #f16d7f;
@@ -535,7 +535,7 @@ form .button_search:hover {
   line-height: 54px;
   letter-spacing: 0.4px;
   text-align: center;
-  margin: 139px auto 110px;
+  margin: 100px auto 110px;
 }
 .all_prod:hover {
   background-image: linear-gradient(to bottom, #ff6767, #ff0d0d);

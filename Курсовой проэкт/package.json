@@ -1,0 +1,20 @@
+{
+  "name": "7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "7.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Golovastov.K",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify": "^2.1.0",
+    "htmlmin": "0.0.7"
+  }
+}

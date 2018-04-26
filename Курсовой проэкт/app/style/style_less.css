@@ -91,6 +91,13 @@ form .button_search:hover {
   display: block;
   padding: 38px 20px 0 0;
 }
+.dropdown_cart {
+  position: absolute;
+  top: 100px;
+  left: 900px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .cart:hover img {
   -webkit-transform: rotate(-360deg);
   transition: 1s;
@@ -98,6 +105,21 @@ form .button_search:hover {
 .cart:focus img {
   -webkit-transform: rotate(0deg);
   transition: .5s;
+}
+.goodsInCart {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cartStatistics {
+  border-top: 1px solid #616161;
+  padding-top: 15px ;
+}
+.cart_go_to {
+  width: 100%;
+  margin-top: 15px;
+}
+.cart_go_to button {
+  width: 100%;
 }
 /*My Acc*/
 .my_account {

@@ -1,8 +1,34 @@
 'use strict';
 
 if (!localStorage.getItem("cart")) {
-    let goodsInCart = $.getJSON('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json');
-    localStorage.setItem("cart", goodsInCart);
+    let goodsInCart = [];
+    localStorage.setItem("cart", 
+    JSON.stringify(goodsInCart));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (!localStorage.getItem("cart")) {
+    $.getJSON('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/patch-1/responses/getBasket.json', function(data) {
+        localStorage.setItem("cart", data);
+    });
 }
 let goodsInCart = JSON.parse(localStorage.getItem('cart'));
 const cart = {
@@ -67,17 +93,20 @@ const cart = {
      * @param {MouseEvent} event Событие клика мышью
      */
     addNewGoods(event) {
-        let response = $.getJSON('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/addToBasket.json', function(data) {
-            
+        $.getJSON('https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/addToBasket.json', function(data) {
+            if (data.result === 1) {
+                goodsInCart.push({
+                    'id': +event.target.dataset.id,
+                    'name': event.target.dataset.name,
+                    'price': +event.target.dataset.price,
+                    'img': event.target.dataset.img,
+                    'qty': 1,
+                });
+                localStorage.setItem("cart", JSON.stringify(goodsInCart));
+            } else
+                alert('Ошибка связи с сервером.');   
         });
-        goodsInCart.push({
-            'id': +event.target.dataset.id,
-            'name': event.target.dataset.name,
-            'price': +event.target.dataset.price,
-            'img': event.target.dataset.img,
-            'qty': 1,
-        });
-        localStorage.setItem("cart", JSON.stringify(goodsInCart));
+        
     },
 
     /**
@@ -217,14 +246,15 @@ const pageCart = {
     }
 };
 
+cart.init();
 /**
  * Выпадающая корзина с товарами
  */
 $('.cart').hover(function(){
     $('.dropdown_cart').css('display', 'block');
     },
-    function(){
-        setTimeout(function() {
-            $('.dropdown_cart').css('display', 'none');
-        }, 10000)
-    });
+function(){
+    setTimeout(function() {
+        $('.dropdown_cart').css('display', 'none');
+    }, 10000)
+ });

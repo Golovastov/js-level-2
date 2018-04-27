@@ -1,0 +1,16 @@
+{
+    "totalPrice": 104,
+    "totalQty": 2,
+    "goods": [
+        {
+            "id": 1,
+            "name": "Mango People T-shirt",
+            "price": 52
+        },
+        {
+            "id": 2,
+            "name": "Mango People T-shirt",
+            "price": 52
+        }
+    ]
+}

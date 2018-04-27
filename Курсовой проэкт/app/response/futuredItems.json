@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-2"
+    },
+    {
+        "id": 2,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-3"
+    },
+    {
+        "id": 3,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-4"
+    },
+    {
+        "id": 4,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-5"
+    },
+    {
+        "id": 5,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-6"
+    },
+    {
+        "id": 6,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-7"
+    },
+    {
+        "id": 7,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-8"
+    },
+    {
+        "id": 8,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-9"
+    },
+    {
+        "id": 9,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-2"
+    },
+    {
+        "id": 10,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-3"
+    },
+    {
+        "id": 11,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-4"
+    },
+    {
+        "id": 12,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-5"
+    },
+    {
+        "id": 13,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-6"
+    },
+    {
+        "id": 14,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-7"
+    },
+    {
+        "id": 15,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-8"
+    },
+    {
+        "id": 16,
+        "name": "Mango People T-shirt",
+        "price": 52,
+        "img": "img/layer-9"
+    }
+]

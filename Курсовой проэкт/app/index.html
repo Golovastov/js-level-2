@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="style/style_less.css">
+  <script src="js/underscore-min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://use.fontawesome.com/1044d5a6c1.js"></script>
@@ -235,9 +236,28 @@
 
     <h2 class="h2_Fut_it">Featured Items</h2>
     <i class="f_items_i">Shop for items based on what we featured in this week</i>
-    <div class="Featured_Items">
-      <div id="Featured_Items_slider_1">
-        <div class="item">
+    <div class="featured_items">
+      <div id="featured_items_slider_1">
+          <script id="featured_items_template" type="text/template">
+            <% _.each(featuredItems, function(item) { %>
+                <div class="item">
+                <a href="<%- item.src %>">
+                  <img src="<%- item.img %>" alt="">
+                  <strong>"<%- item.name %>"
+                    <span>$<%- item.price %></span>
+                  </strong>
+                </a>
+                <div class="add_to_cart js_add_to_cart" 
+                    data-id="<%= item.id %>" 
+                    data-name="<%- item.name %>"
+                    data-price="<%= item.price %>">
+                    <img src="img/cart_wite.png" alt="cart">
+                    Add to Cart
+                </div>
+                </div>
+            <% }); %>
+          </script>
+        <!-- <div class="item">
           <a href="Single_Page.html">
             <img src="img/layer-2.jpg" alt="">
             <strong>Mango People T-shirt
@@ -317,8 +337,8 @@
           <a href="#" class="add_to_cart">
             <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
         </div>
-      </div>
-      <div id="Featured_Items_slider_2">
+      </div> -->
+      <div id="featured_items_slider_2">
         <div class="item">
           <a href="Single_Page.html">
             <img src="img/layer-2.jpg" alt="">

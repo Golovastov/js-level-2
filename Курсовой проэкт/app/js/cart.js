@@ -1,11 +1,29 @@
 'use strict';
 
-if (!localStorage.getItem("cart")) {
-    let goodsInCart = [];
-    localStorage.setItem("cart", 
-    JSON.stringify(goodsInCart));
-}
-
+// Модуль каталога
+var catalog = (function($) {
+ 
+    // Инициализация модуля
+    function init() {
+        _render();
+    }
+ 
+    // Рендерим каталог
+    function _render() {
+        var template = _.template($('#featured_items_template').html()),
+            $featuredItems = $('#item');
+ 
+        $.getJSON('', function(data) {
+            $goods.html(template({goods: data}));
+        });
+    }
+ 
+    // Экспортируем наружу
+    return {
+        init: init
+    }
+     
+})(jQuery);
 
 
 

@@ -10,12 +10,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="style/style_less.css">
-  <script src="js/underscore-min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://use.fontawesome.com/1044d5a6c1.js"></script>
-  <script src="js/index_slider.js" defer></script>
-  <script src="js/cart.js" defer></script>
 </head>
 
 <body>
@@ -59,18 +53,48 @@
         <a href="cart.html" class="cart">
           <img src="img/cart.png" alt="cart">
         </a>
-<!--dropdown cart-->      
-        <div class="dropdown_cart" style="display: none;" aria-labelledby="cart">
-          <div class="goodsInCart"></div>
-          <div class="cartStatistics">
-            <p class="totalPrice">Всего
-              <span class="totalQty"></span>
-              <span class="totalPrice_price"></span> руб.</p>
-          </div>
-          <form class="cart_go_to" method="post" action="cart.html">
-            <button>Оформить заказ</button>
-          </form>
+
+        <!--dropdown cart--> 
+
+        <div class="dropdown_cart"  aria-labelledby="cart">
+            <script id="cart-template" type="text/template">
+              <% _.each(goods, function(good) { %>
+                  <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
+                      <td><%= good.id %></td>
+                      <td><%- good.name %></td>
+                      <td><%= good.price %> руб.</td>
+                      <td>
+                          <span 
+                              class="cart-item__btn-dec-count js-change-count"
+                              title="Уменьшить на 1"
+                              data-id="<%= good.id %>"
+                              data-delta="-1"
+                          >
+                              <span class="glyphicon glyphicon-minus"></span>
+                          </span>
+                          <span class="js-count"><%= good.count %></span>
+                          <span 
+                              class="cart-item__btn-inc-count js-change-count"
+                              title="Увеличить на 1"
+                              data-id="<%= good.id %>"
+                              data-delta="1"
+                          >
+                              <span class="glyphicon glyphicon-plus"></span>
+                          </span>
+                      </td>
+                      <td><span class="js-summa"><%= good.count * good.price %></span> руб.</td>
+                      <td>
+                          <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>">
+                              <span class="glyphicon glyphicon-remove"></span>                                
+                          </span>
+                      </td>
+                  </tr>
+              <% }); %>
+          </script>  
         </div>
+
+        <!-- Аккаунт   -->
+
         <a href="#" class="my_account">
           My Account
           <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -231,32 +255,36 @@
         <img src="img/4-layers%20(3).jpg" alt="for kids">
       </a>
     </div>
+  </div>
 
     <!--	Featured Items	-->
 
     <h2 class="h2_Fut_it">Featured Items</h2>
     <i class="f_items_i">Shop for items based on what we featured in this week</i>
-    <div class="featured_items">
-      <div id="featured_items_slider_1">
-          <script id="featured_items_template" type="text/template">
-            <% _.each(featuredItems, function(item) { %>
-                <div class="item">
-                <a href="<%- item.src %>">
-                  <img src="<%- item.img %>" alt="">
-                  <strong>"<%- item.name %>"
-                    <span>$<%- item.price %></span>
-                  </strong>
-                </a>
-                <div class="add_to_cart js_add_to_cart" 
-                    data-id="<%= item.id %>" 
-                    data-name="<%- item.name %>"
-                    data-price="<%= item.price %>">
-                    <img src="img/cart_wite.png" alt="cart">
-                    Add to Cart
-                </div>
-                </div>
-            <% }); %>
-          </script>
+    <div id="goods" class="featured_items">
+        <img src="img/loading.gif" alt="" rel="nofollow">
+      <!-- <div id="featured_items_slider_1"> -->
+
+      <script id="catalog-template" type="text/template">
+        <% _.each(goods, function(good) {  %>
+            <div class="item">
+              <a href="<%- good.src %>">
+                <img src="<%- good.img %>" alt="">
+                <strong><%- good.name %>
+                  <span>$ <%- good.price %></span>
+                </strong>
+              </a>
+              <div class="add_to_cart js-add-to-cart" 
+                  data-id="<%= good.id %>" 
+                  data-name="<%- good.name %>"
+                  data-price="<%= good.price %>">
+                  <img src="img/cart_wite.png" alt="cart">
+                  Add to Cart
+              </div>
+            </div>
+        <% }); %>
+      </script>
+    </div>
         <!-- <div class="item">
           <a href="Single_Page.html">
             <img src="img/layer-2.jpg" alt="">
@@ -338,7 +366,9 @@
             <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
         </div>
       </div> -->
-      <div id="featured_items_slider_2">
+
+
+      <!-- <div id="featured_items_slider_2">
         <div class="item">
           <a href="Single_Page.html">
             <img src="img/layer-2.jpg" alt="">
@@ -420,7 +450,7 @@
             <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
         </div>
       </div>
-    </div>
+    </div> -->
     <a href="#" class="all_prod">Browse All Product
       <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
     </a>
@@ -584,7 +614,15 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://use.fontawesome.com/1044d5a6c1.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
+  <script src="js/index_slider.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

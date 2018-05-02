@@ -137,6 +137,10 @@ var cart = (function($) {
     }
 
 
+
+
+
+
     // Рендерим корзину
     function renderCart() {
         var template = _.template($('#cart-template').html()),
@@ -230,14 +234,5 @@ var cart = (function($) {
         getCountAll: getCountAll,
         getSumma: getSumma
     }
-
-    $('.cart').hover(function(){
-        $('.dropdown_cart').css('display', 'block');
-        },
-    function(){
-        setTimeout(function() {
-            $('.dropdown_cart').css('display', 'none');
-        }, 10000)
-     });
 
 })(jQuery);

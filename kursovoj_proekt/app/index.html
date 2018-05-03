@@ -255,201 +255,35 @@
         <img src="img/4-layers%20(3).jpg" alt="for kids">
       </a>
     </div>
-  </div>
 
     <!--	Featured Items	-->
 
     <h2 class="h2_Fut_it">Featured Items</h2>
     <i class="f_items_i">Shop for items based on what we featured in this week</i>
-    <div id="featured_items_slider_1" class="featured_items">
-        <img src="img/loading.gif" alt="" rel="nofollow">
+    <div id="featured_items" class="featured_items featured_items_slider">
+        <img src="img/loading.gif" alt="" rel="nofollow" style="display: block; margin: 0 auto;">
     </div>
       <script id="catalog-template" type="text/template">
+  
         <% _.each(goods, function(good) {  %>
-            <div class="item">
-              <a href="<%- good.src %>">
-                <img src="<%- good.img %>" alt="">
-                <strong><%- good.name %>
-                  <span>$ <%- good.price %></span>
-                </strong>
-              </a>
-              <div class="add_to_cart js-add-to-cart" 
-                  data-id="<%= good.id %>" 
-                  data-name="<%- good.name %>"
-                  data-price="<%= good.price %>">
-                  <img src="img/cart_wite.png" alt="cart">
-                  Add to Cart
-              </div>
+          <div class="item">
+            <a href="<%- good.src %>">
+              <img src="<%- good.img %>" alt="">
+              <strong><%- good.name %>
+                <span class="item_price">$ <%- good.price %></span>
+              </strong>
+            </a>
+            <div class="add_to_cart js-add-to-cart" 
+                data-id="<%= good.id %>" 
+                data-name="<%- good.name %>"
+                data-price="<%= good.price %>">
+                <img src="img/cart_wite.png" alt="cart">
+                <span>Add to Cart</span>
             </div>
+          </div>
         <% }); %>
       </script>
-    
-        <!-- <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-2.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart" data-id="1" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-3.png" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart" data-id="2" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-4.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart" data-id="3" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-5.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart" data-id="4" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-6.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a  class="add_to_cart" data-id="5" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-7.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a  class="add_to_cart" data-id="6" data-name="Mango People T-shirt" data-img="img/layer-2.jpg" data-price="52">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-8.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-9.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-      </div> -->
 
-
-      <!-- <div id="featured_items_slider_2">
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-2.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-3.png" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-4.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-5.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-6.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-7.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-8.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-        <div class="item">
-          <a href="Single_Page.html">
-            <img src="img/layer-9.jpg" alt="">
-            <strong>Mango People T-shirt
-              <span>$52.00</span>
-            </strong>
-          </a>
-          <a href="#" class="add_to_cart">
-            <img src="img/cart_wite.png" alt="cart">Add to Cart</a>
-        </div>
-      </div>
-    </div> -->
     <a href="#" class="all_prod">Browse All Product
       <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
     </a>
@@ -619,7 +453,6 @@
   <script src="https://use.fontawesome.com/1044d5a6c1.js"></script>
   <script src="js/catalog.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.min.js"></script>
-  <script src="js/index_slider.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
 </body>

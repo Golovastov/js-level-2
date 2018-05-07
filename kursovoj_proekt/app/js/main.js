@@ -8,7 +8,9 @@ var app = (function($) {
         options = {
             elAddToCart: '.js-add-to-cart',
             attrId: 'data-id',
+            attrImg: 'data-img',
             attrName: 'data-name',
+            attrSrc: 'data-src',
             attrPrice: 'data-price',
             attrDelta: 'data-delta',
             elCart: '#cart',

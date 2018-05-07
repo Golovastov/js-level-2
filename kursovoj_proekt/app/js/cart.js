@@ -26,7 +26,9 @@ var cart = (function($) {
             renderMenuCartOnInit: true,
             elAddToCart: '.js-add-to-cart',
             attrId: 'data-id',
+            attrImg: 'data-img',
             attrName: 'data-name',
+            attrSrc: 'data-src',
             attrPrice: 'data-price',
             attrDelta: 'data-delta',
             elCart: '#cart',
@@ -93,6 +95,7 @@ var cart = (function($) {
             oldItem.count = oldItem.count + item.count;
         }
         saveData();
+        renderCart();
         return item;
     }
 
@@ -177,6 +180,8 @@ var cart = (function($) {
                 id: +$this.attr(opts.attrId),
                 name: $this.attr(opts.attrName),
                 price: +$this.attr(opts.attrPrice),
+                img: $this.attr(opts.attrImg),
+                src: $this.attr(opts.attrSrc),
                 count: 1
             });    
             renderMenuCart();

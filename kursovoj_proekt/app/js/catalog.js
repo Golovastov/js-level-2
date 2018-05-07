@@ -24,7 +24,7 @@ var catalog = (function($) {
                 slidesToShow: 4,
                 slidesToScroll: 1,
                 dots: true
-              });
+            });
         });       
     }
 

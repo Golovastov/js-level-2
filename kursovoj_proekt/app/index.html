@@ -50,46 +50,56 @@
             <i class="fa fa-search" aria-hidden="true"></i>
           </a>
         </form>
-        <a href="cart.html" class="cart">
-          <img src="img/cart.png" alt="cart">
-        </a>
+        <div class="container_cart">
+          <div class="cart">
+            <img src="img/cart.png" alt="cart">
+          </div>
 
-        <!--dropdown cart--> 
+          <!--dropdown cart--> 
 
-        <div class="dropdown_cart"  aria-labelledby="cart">
-            <script id="cart-template" type="text/template">
-              <% _.each(goods, function(good) { %>
-                  <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
-                      <td><%= good.id %></td>
-                      <td><%- good.name %></td>
-                      <td><%= good.price %> руб.</td>
-                      <td>
-                          <span 
-                              class="cart-item__btn-dec-count js-change-count"
-                              title="Уменьшить на 1"
-                              data-id="<%= good.id %>"
-                              data-delta="-1"
-                          >
-                              <span class="glyphicon glyphicon-minus"></span>
-                          </span>
-                          <span class="js-count"><%= good.count %></span>
-                          <span 
-                              class="cart-item__btn-inc-count js-change-count"
-                              title="Увеличить на 1"
-                              data-id="<%= good.id %>"
-                              data-delta="1"
-                          >
-                              <span class="glyphicon glyphicon-plus"></span>
-                          </span>
-                      </td>
-                      <td><span class="js-summa"><%= good.count * good.price %></span> руб.</td>
-                      <td>
-                          <span class="cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>">
-                              <span class="glyphicon glyphicon-remove"></span>                                
-                          </span>
-                      </td>
-                  </tr>
-              <% }); %>
+          <table id="cart" class="dropdown_cart">
+            
+          </table>      
+          <script id="cart-template" type="text/template">
+            <tr>
+                <th>Product Details</th>
+                <th>unite Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>ACTION</th>
+              </tr>
+            <% _.each(goods, function(good) { %>
+            <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
+              <td><a href="<%- good.src %>"><img src="<%- good.img %>"><p class="name_item"><%- good.name %></p></a>
+                <p>Color:<span>Red</span></p>
+                <p>Size:<span>Xl</span></p>
+              </td>
+              <td>$<%= good.price %></td>
+              <td>
+                <span 
+                  class="cart-item__btn-dec-count js-change-count"
+                  title="Уменьшить на 1"
+                  data-id="<%= good.id %>"
+                  data-delta="-1"
+                >
+                  <span class="glyphicon glyphicon-minus"></span>
+              </span>
+              <span class="js-count"><%= good.count %></span>
+              <span 
+                  class="cart-item__btn-inc-count js-change-count"
+                  title="Увеличить на 1"
+                  data-id="<%= good.id %>"
+                  data-delta="1"
+              >
+                  <span class="glyphicon glyphicon-plus"></span>
+              </span>
+            </td>
+              <td>$<%= good.count * good.price %></td>
+              <td>
+                <i class="fa fa-times-circle cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>" aria-hidden="true"></i>
+              </td>
+            </tr>
+            <% }); %>
           </script>  
         </div>
 
@@ -268,14 +278,16 @@
         <% _.each(goods, function(good) {  %>
           <div class="item">
             <a href="<%- good.src %>">
-              <img src="<%- good.img %>" alt="">
+              <img src="<%- good.img %>">
               <strong><%- good.name %>
                 <span class="item_price">$ <%- good.price %></span>
               </strong>
             </a>
             <div class="add_to_cart js-add-to-cart" 
                 data-id="<%= good.id %>" 
+                data-img="<%- good.img %>"
                 data-name="<%- good.name %>"
+                data-src="<%- good.src %>"
                 data-price="<%= good.price %>">
                 <img src="img/cart_wite.png" alt="cart">
                 <span>Add to Cart</span>

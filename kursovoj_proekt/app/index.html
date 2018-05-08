@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick-theme.css" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="style/style_less.css">
+  
 </head>
 
 <body data-page="catalog">
@@ -51,55 +52,62 @@
           </a>
         </form>
         <div class="container_cart">
-          <div class="cart">
+          <div class="cart js-cart-toggle">
             <img src="img/cart.png" alt="cart">
           </div>
 
           <!--dropdown cart--> 
 
-          <table id="cart" class="dropdown_cart">
-            
+          <table id="cart" class="dropdown_cart" style="display: none;">
           </table>      
           <script id="cart-template" type="text/template">
             <tr>
-                <th>Product Details</th>
-                <th>unite Price</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-                <th>ACTION</th>
-              </tr>
+              <th colspan="2">Product DETAILS</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>total</th>
+              <th>ACTION</th>
+            </tr>
             <% _.each(goods, function(good) { %>
-            <tr class="cart-item js-cart-item" data-id="<%= good.id %>">
-              <td><a href="<%- good.src %>"><img src="<%- good.img %>"><p class="name_item"><%- good.name %></p></a>
-                <p>Color:<span>Red</span></p>
-                <p>Size:<span>Xl</span></p>
+            <tr class="js-cart-item" data-id="<%= good.id %>">
+              <td class="drop-product-details"><a href="<%- good.src %>"><img src="<%- good.img %>"></a>
+                <p>Color: <span>Red</span></p>
+                <p>Size: <span>Xl</span></p>
               </td>
+              <td><p class="name_item"><%- good.name %></p></td>
               <td>$<%= good.price %></td>
               <td>
                 <span 
-                  class="cart-item__btn-dec-count js-change-count"
-                  title="Уменьшить на 1"
+                  class="drop-btn-dec-count js-change-count"
+                  title="decrease by one"
                   data-id="<%= good.id %>"
                   data-delta="-1"
                 >
-                  <span class="glyphicon glyphicon-minus"></span>
-              </span>
-              <span class="js-count"><%= good.count %></span>
-              <span 
-                  class="cart-item__btn-inc-count js-change-count"
-                  title="Увеличить на 1"
-                  data-id="<%= good.id %>"
-                  data-delta="1"
-              >
-                  <span class="glyphicon glyphicon-plus"></span>
-              </span>
-            </td>
-              <td>$<%= good.count * good.price %></td>
+                <i class="fa fa-angle-down"></i>
+                </span>
+                <span class="js-count"><%= good.count %></span>
+                <span 
+                    class="drop-btn-inc-count js-change-count"
+                    title="increase by one"
+                    data-id="<%= good.id %>"
+                    data-delta="1"
+                >
+                <i class="fa fa-angle-up"></i>
+              </td>
               <td>
-                <i class="fa fa-times-circle cart-item__btn-remove js-remove-from-cart" title="Удалить из корзины" data-id="<%= good.id %>" aria-hidden="true"></i>
+                <span class="js-summa">$<%= good.count * good.price %></span>
+              </td>
+              <td>
+                <i class="fa fa-times-circle drop-btn-remove js-remove-from-cart" title="Remove" data-id="<%= good.id %>" aria-hidden="true"></i>
               </td>
             </tr>
             <% }); %>
+            <tr class="drop-btn-row">
+              <td></td>
+              <td colspan="2"><a href="cart.html" class="drop-btn">Open Cart</a></td>
+              <td><a href="checkout.html" class="drop-btn">Checkout</a></td>
+              <td colspan="2" class="js-cart-toggle"><span class="drop-btn">Close up</span></td>
+            </tr>
           </script>  
         </div>
 

@@ -62,7 +62,7 @@
           </table>      
           <script id="cart-template" type="text/template">
             <tr>
-              <th colspan="2">Product DETAILS</th>
+              <th colspan="2">DETAILS</th>
               <th>Price</th>
               <th>Quantity</th>
               <th>total</th>
@@ -74,7 +74,7 @@
                 <p>Color: <span>Red</span></p>
                 <p>Size: <span>Xl</span></p>
               </td>
-              <td><p class="name_item"><%- good.name %></p></td>
+              <td><a href="<%- good.src %>"><p class="name_item"><%- good.name %></p></a></td>
               <td>$<%= good.price %></td>
               <td>
                 <span 
@@ -106,7 +106,7 @@
               <td></td>
               <td colspan="2"><a href="cart.html" class="drop-btn">Open Cart</a></td>
               <td><a href="checkout.html" class="drop-btn">Checkout</a></td>
-              <td colspan="2" class="js-cart-toggle"><span class="drop-btn">Close up</span></td>
+              <td colspan="2" class=""><span class="drop-btn js-cart-Close">Close up</span></td>
             </tr>
           </script>  
         </div>

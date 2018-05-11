@@ -98,7 +98,7 @@ form .button_search:hover {
 
 .dropdown_cart {
  position: absolute;
- left: -200px;
+ left: -330px;
  background-color: #fff;
  padding: 20px;
  text-align: center;
@@ -116,6 +116,7 @@ form .button_search:hover {
 }
 
 .dropdown_cart th {
+  min-width: 99px;
   border-bottom: 2px solid #eaeaea;
   font-size: 13px;
   font-weight: 500;

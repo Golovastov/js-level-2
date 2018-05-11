@@ -96,7 +96,6 @@ var cart = (function($) {
             oldItem.count = oldItem.count + item.count;
         }
         saveData();
-        renderCart();
         return item;
     }
 
@@ -148,6 +147,7 @@ var cart = (function($) {
             };
         $(opts.elCart).html(template(data));
         renderTotalCartSumma();
+        bindHandlerBtnCloseCart();
     }
 
     // Рендерим количество товаров в меню
@@ -181,6 +181,7 @@ var cart = (function($) {
                 count: 1
             });
             renderMenuCart();
+            renderCart();
             alert('Товар добавлен в корзину');
         });
     }
@@ -227,6 +228,13 @@ var cart = (function($) {
       });
     }
 
+    function bindHandlerBtnCloseCart() {
+        $('.js-cart-Close').click(function() {
+            $(opts.elCart).slideUp( "fast", function() {
+    
+            });
+          });
+    }
 
 
     // Экспортируем наружу
